@@ -12,7 +12,9 @@ body    {
 .logo   {
     grid-area: l;
     border-bottom: 1px solid white;
-    
+    img    {
+        margin-left: 50px;
+    }
 }
 .menu   {
     grid-area: m;
@@ -214,6 +216,9 @@ body    {
     .logo   {
         justify-self: center;
         border: none;
+        img    {
+            margin-left: 0;
+        }
     }
     .menu   {
         justify-content: center;

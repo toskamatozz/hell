@@ -20,6 +20,10 @@ body {
   border-bottom: 1px solid white;
 }
 
+.logo img {
+  margin-left: 50px;
+}
+
 .menu {
   -ms-grid-row: 1;
   -ms-grid-column: 5;
@@ -344,6 +348,9 @@ body {
     -ms-grid-column-align: center;
         justify-self: center;
     border: none;
+  }
+  .logo img {
+    margin-left: 0;
   }
   .menu {
     -webkit-box-pack: center;
