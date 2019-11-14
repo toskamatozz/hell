@@ -1,0 +1,250 @@
+@font-face {
+    font-family: 'MobileFont';
+    src: url('./../fonts/MobileFont.ttf');
+}
+*   {
+    margin: 0;
+    padding: 0;
+}
+body    {
+    background: black;
+}
+.logo   {
+    grid-area: l;
+    border-bottom: 1px solid white;
+    
+}
+.menu   {
+    grid-area: m;
+    background: black;
+    padding: 0 20px;
+    border-bottom: 1px solid white;
+    display: grid;
+    grid-template-columns: 200px 200px;
+    justify-content: end;
+    a   {
+        font-family: MobileFont;
+        text-decoration: none;
+        color: white;
+        font-size: 50px;
+        justify-self: end;
+        &:hover  {
+            color: chartreuse;
+        }
+    }
+}
+.side   {
+    grid-area: s;
+    background-color: black;
+    color: white;
+    font-family: MobileFont;
+    font-size: 15px;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(10, 150px);
+    grid-gap: 5px;
+    grid-auto-flow: row;
+    overflow: scroll;
+    .slide1 {
+        border: 2px solid white;
+        outline: 1px solid white;
+        outline-offset: -6px;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 20px;
+    }
+    .slide2 {
+        border: 2px solid white;
+        outline: 1px solid white;
+        outline-offset: -6px;
+        grid-row-start: 2;
+        grid-row-end: 4;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 20px;
+    }
+    .slide3 {
+        border: 2px solid white;
+        outline: 1px solid white;
+        outline-offset: -6px;
+        grid-row-start: 3;
+        grid-row-end: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 20px;
+    }
+    .slide4 {
+        border: 2px solid white;
+        outline: 1px solid white;
+        outline-offset: -6px;
+        grid-row-start: 4;
+        grid-row-end: 6;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 20px;
+    }
+}
+.content    {
+    grid-area: c;
+    background-color: black;
+    color: white;
+    font-family: MobileFont;
+    font-size: 15px;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: auto 150px 150px 150px auto;
+    grid-template-rows: 120px 120px 1fr;
+    grid-gap: 5px;
+    .card1  {
+        border: 2px solid white;
+        outline: 1px solid white;
+        outline-offset: -6px;
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 20px;
+    }
+    .card2  {
+        border: 2px solid white;
+        outline: 1px solid white;
+        outline-offset: -6px;
+        grid-column-start: 3;
+        grid-column-end: 5;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 20px;
+    }
+    p   {
+        margin-left: 20px
+    }
+    .mountain   {
+        grid-column-start: 2;
+        grid-column-end: 5;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        font-size: 10px;
+    }
+}
+.ticker {
+    grid-area: t;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    position: relative;
+    background: black;
+    border: 2px solid white;
+    outline: 1px solid white;
+    outline-offset: -6px;
+    margin: 0 5px;
+    ul {
+        display: inline-flex;
+        justify-content: flex-end;
+        width: 150%;
+        position: absolute;
+        animation: scroll 10s infinite linear;
+        li {
+            display: inline-block;
+            margin-left: 100px;
+            a   {
+                text-decoration: none;
+                font-family: mobilefont;
+                font-size: 50px;
+                line-height: 60px;
+                color: white;
+                &:hover  {
+                    color: chartreuse;
+                }
+                @keyframes scroll   {
+                    0%{transform: translate(0, 0);}
+                    100%{transform: translate(-100%, 0)}
+                }
+            }
+        }
+    }
+}
+.articles   {
+    grid-area: a;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+    padding: 5px;
+    background: black;
+    .article    {
+        border: 2px solid white;
+        outline: 1px solid white;
+        outline-offset: -6px;
+        color: white;
+        padding: 20px;
+        font-family: MobileFont;
+        font-size: 15px;
+        display: flex;
+        flex-direction: column;
+        img    {
+            margin: 20px;
+        }
+    }
+}
+.footer {
+    grid-area: f;
+}
+.container  {
+    display: grid;
+    grid-template-columns: 150px 150px 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 400px 60px auto;
+    grid-template-areas: "l l l l m m"
+                         "s s c c c c"
+                         "t t t t t t"
+                         "a a a a a a"
+                         "f f f f f f";
+}
+@media (max-width: 600px)  {
+    .logo   {
+        justify-self: center;
+        border: none;
+    }
+    .menu   {
+        justify-content: center;
+        a  {
+            justify-self: center;
+        }
+    }
+    .content    {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        .mountain   {
+            font-size: 6px;
+            justify-self: center;
+        }
+    }
+    .articles   {
+        grid-template-columns: 1fr;
+        grid-auto-flow: row;
+    }
+    .container  {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 50px 50px auto 400px 60px auto;
+        grid-template-areas: "l l"
+                             "m m"
+                             "c c"
+                             "s s"
+                             "t t"
+                             "a a"
+                             "f f";
+    }
+}
